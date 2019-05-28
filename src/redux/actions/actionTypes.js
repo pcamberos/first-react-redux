@@ -1,2 +1,5 @@
 export const UPDATE_VALUE = "update_value";
 export const SAVE_TODO = "save_todo";
+
+export const TOGGLE_COMPLETED = "toggle_completed";
+export const DELETE_TODO = "delete_todo";

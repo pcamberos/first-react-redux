@@ -8,6 +8,9 @@ import ListItemText from '@material-ui/core/ListItemText';
 import IconButton from '@material-ui/core/IconButton';
 import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
 
+import * as actions from './redux/actions';
+import {connect} from 'react-redux';
+
 const TodoList = (props) => {
     const {todos, deleteTodo, toggleCompleted} = props;
     const listItems = todos.map ((todo, index) => {
@@ -41,4 +44,12 @@ const TodoList = (props) => {
     )
 };
 
-export default TodoList;
+const mapStateToProps = ({todo}) => {
+    const todos = todo.todos;
+    return {todos};
+}
+
+export default connect(
+    mapStateToProps, 
+    actions
+)(TodoList);

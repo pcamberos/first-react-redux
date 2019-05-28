@@ -1,4 +1,4 @@
-import {UPDATE_VALUE, SAVE_TODO} from './actionTypes';
+import {UPDATE_VALUE, SAVE_TODO, DELETE_TODO, TOGGLE_COMPLETED} from './actionTypes';
 
 export const updateValue = (value) =>{
     return{
@@ -8,30 +8,23 @@ export const updateValue = (value) =>{
 }
 
 export const saveTodo = () =>{
-  console.log("Save Todo en Index.js de actions");
   return{
       type: SAVE_TODO,
       payload: ""
   }
 }
 
-
-/*
-deleteTodo = (index) => {
-  const todos = this.state.todos;
-  todos.splice(index,1);
-  this.setState({
-    todos
-  });
+export const deleteTodo = (index) =>{
+  return{
+      type: DELETE_TODO,
+      payload: index
+  }
 }
 
-toggleCompleted = (index) => {
-  const todos = this.state.todos;
-  todos[index].completed = !todos[index].completed;
-  this.setState({
-    todos
-  });
-  console.log(this.state.todos);
-}*/
-
+export const toggleCompleted = (index) =>{
+  return{
+      type: TOGGLE_COMPLETED,
+      payload: index
+  }
+}
 

@@ -8,7 +8,7 @@ const TodoForm = (props) => {
     return(
         <form onSubmit={e=>{
             e.preventDefault();
-            saveTodo();
+            saveTodo(); 
         }} >
             <TextField 
                 type="text" 
